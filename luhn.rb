@@ -28,4 +28,3 @@ module Luhn
   end
 end
 
-Luhn.is_valid?(4194560385008504)

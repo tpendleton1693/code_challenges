@@ -18,9 +18,9 @@ module Luhn
       end
     end
 
-    answer = ary.inject { |x, y| x + y }
+    sum = ary.inject { |x, y| x + y }
 
-    if answer % 10 == 0
+    if sum % 10 == 0
       true
     else
       false
@@ -28,4 +28,3 @@ module Luhn
   end
 end
 
-Luhn.is_valid?(4194560385008504)

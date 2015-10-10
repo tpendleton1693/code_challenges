@@ -6,7 +6,7 @@ def longest_collatz
   n.each do |x|
     ary << x
     while x != 1
-      if x % 2 == 0
+      if x.even?
 	x = x/2
 	ary << x
       else

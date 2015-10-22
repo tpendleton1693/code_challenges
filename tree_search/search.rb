@@ -10,15 +10,14 @@ end
 
 def depth_search(node, value)
   if node.payload == value
-    puts "Search returned #{node.payload}" 
     node
   else
+    result = nil
     node.children.each do |child|
-      puts "value in child #{child.payload}"
       result = depth_search(child, value)
-      return result if result.payload == value
+      break if result
     end
-    node
+    return result
   end
 end
 

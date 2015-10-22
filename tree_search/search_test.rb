@@ -35,7 +35,6 @@ class TestSearch < MiniTest::Test
   end
 
   def test_search_invalid
-    skip
     assert_equal(nil, depth_search(@trunk, 577))
   end
 

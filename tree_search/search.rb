@@ -21,6 +21,27 @@ def depth_search(node, value)
   end
 end
 
+def breadth_search(node, value)
+  queue = []
+
+  queue << node
+  if node.payload == value
+    node
+  else
+    current_node = queue.shift
+    while current_node do
+
+      # Cycle through children, add them to the array and check their values
+      current_node.children.each do |child|
+	queue << child
+	return child if child.payload == value
+      end
+
+      current_node = queue.shift
+    end
+  end
+end
+  
 # The "Leafs" of a tree, elements that have no children
 fifth_node = Tree.new(5, [])
 eleventh_node = Tree.new(11, [])
@@ -36,3 +57,4 @@ fifth_node = Tree.new(5, [ninth_node])
 # The "Trunk" of the tree
 trunk = Tree.new(2, [seventh_node, fifth_node])
 
+breadth_search(trunk, 11)

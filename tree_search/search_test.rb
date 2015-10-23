@@ -24,18 +24,22 @@ class TestSearch < MiniTest::Test
 
   def test_search_two
     assert_equal(@trunk, depth_search(@trunk, 2))
+    assert_equal(@trunk, breadth_search(@trunk, 2))
   end
 
   def test_search_eleven
     assert_equal(@eleventh_node, depth_search(@trunk, 11))
+    assert_equal(@eleventh_node, breadth_search(@trunk, 11))
   end
 
   def test_search_four
     assert_equal(@fourth_node, depth_search(@trunk, 4))
+    assert_equal(@fourth_node, breadth_search(@trunk, 4))
   end
 
   def test_search_invalid
     assert_equal(nil, depth_search(@trunk, 577))
+    assert_equal(nil, breadth_search(@trunk, 577))
   end
 
 end
